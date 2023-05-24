@@ -23,23 +23,35 @@ struct Onboarding: View {
 
 struct OnboardingView : View {
     var body: some View {
-        TabView{
-
-
-            Image("img5")
-                .padding(.bottom , 200)
-
-
-            Image("img4")
-                .padding(.bottom , 200)
-
-
-
-
-
-
-        }.tabViewStyle(PageTabViewStyle())
-
+        NavigationStack{
+            VStack{
+                NavigationLink(destination: SignInView()) {
+                    Text("SKIP")
+                        .frame(maxWidth: 100)
+                }
+                .buttonStyle(.bordered)
+                .cornerRadius(15)
+                .padding(.leading,250)
+                
+                
+                TabView{
+                    
+                    Image("img5")
+                        .padding(.bottom , 200)
+                    
+                    
+                    Image("img4")
+                        .padding(.bottom , 200)
+                    
+                    
+                    
+                    
+                    
+                    
+                }.tabViewStyle(PageTabViewStyle())
+                
+            }
+        }
     }
 }
     struct Onboarding_Previews: PreviewProvider {
